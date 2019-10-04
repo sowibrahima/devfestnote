@@ -7,7 +7,7 @@
 <ion-content>
     <div *ngIf="speaker">
       <ion-label>{{speaker.name}} </ion-label>
-      <ion-img [src]= "['https://devfest-nantes-2018-api.cleverapps.io', speaker.photoUrl]" ></ion-img>
+      <ion-img [src]= "['https://devfest2018.gdgnantes.com/'+speaker.photoUrl]" ></ion-img>
       <div>
           <ion-title> Biographie</ion-title>
           <ion-label> {{speaker.bio}} </ion-label>

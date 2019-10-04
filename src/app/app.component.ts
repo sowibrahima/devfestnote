@@ -20,6 +20,11 @@ export class AppComponent {
       title: 'Présentateur',
       url: '/speakers',
       icon: 'list'
+    }, 
+    {
+      title: 'Informations appareil',
+      url: '/device-infos',
+      icon: 'information-circle-outline'
     }
   ];
 

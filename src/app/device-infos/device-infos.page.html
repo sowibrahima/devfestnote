@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>device-infos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div *ngIf="device">
+        <div *ngIf="device.platform">
+            <ion-label> Platform {{device.platform}} </ion-label>
+        </div>
+        <div *ngIf="device.version">
+            <ion-label> Version {{device.version}} </ion-label>
+        </div>
+        <div *ngIf="device.uuid">
+          <ion-label> UUID {{device.uuid}} </ion-label>
+        </div>
+        <div *ngIf="device.model">
+            <ion-label> Model {{device.model}} </ion-label>
+        </div>        
+        <div *ngIf="connectionStatus.connected">
+            <ion-label> 
+              Connected :
+                <ion-icon slot="middle" name="md-checkbox"></ion-icon>
+            </ion-label>
+            
+        </div>
+        <div *ngIf="connectionStatus.connectionType">
+            <ion-label> Connection {{connectionStatus.connectionType}} </ion-label>
+        </div>
+        
+    </div>
+</ion-content>

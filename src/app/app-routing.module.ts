@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
+    path: 'device-infos',
+    loadChildren: () => import('./device-infos/device-infos.module').then(m => m.DeviceInfosPageModule)
+  },
+  {
     path: 'sessions',
     loadChildren: () => import('./sessions/sessions.module').then(m => m.SessionsPageModule)
   },
@@ -31,7 +35,9 @@ const routes: Routes = [
   { path: 'sessions', loadChildren: './sessions/sessions.module#SessionsPageModule' },
   { path: 'sessiondetail', loadChildren: './sessiondetail/sessiondetail.module#SessiondetailPageModule' },
   { path: 'speakers', loadChildren: './speakers/speakers.module#SpeakersPageModule' },
-  { path: 'speakers-details', loadChildren: './speakers-details/speakers-details.module#SpeakersDetailsPageModule' }
+  { path: 'speakers-details', loadChildren: './speakers-details/speakers-details.module#SpeakersDetailsPageModule' },
+  { path: 'device-infos', loadChildren: './device-infos/device-infos.module#DeviceInfosPageModule' }
+
   
 
 ];
