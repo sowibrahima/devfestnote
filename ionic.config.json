@@ -1,5 +1,8 @@
 {
   "name": "DevFest Note",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
   "type": "angular"
 }

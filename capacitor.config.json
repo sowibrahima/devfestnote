@@ -1,0 +1,7 @@
+{
+  "appId": "com.fila3.tp",
+  "appName": "DevFest Note",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}
