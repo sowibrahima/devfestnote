@@ -11,6 +11,7 @@ export class SpeakersDetailsPage implements OnInit {
 
   public myId : string;
   public speaker: any[];
+  toogle:any
 
   speakers:any = []
 
@@ -18,7 +19,7 @@ export class SpeakersDetailsPage implements OnInit {
 
   ngOnInit() {
     this.myId = this.activatedRoute.snapshot.paramMap.get('name');
-    this.getSpeaker(this.myId);
+    this.getSpeaker(this.myId);    
   }
 
   getSpeaker(myId) {
@@ -31,5 +32,7 @@ export class SpeakersDetailsPage implements OnInit {
     })
   }
 
-
+  onValChange(){
+    console.log("oui");
+  }
 }

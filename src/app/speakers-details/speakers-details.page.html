@@ -7,6 +7,10 @@
 <ion-content>
     <div *ngIf="speaker">
       <ion-label>{{speaker.name}} </ion-label>
+      <div>
+          <ion-label> Ajouter à mes contacts </ion-label>
+          <ion-toggle (ionChange)="onValChange()" ></ion-toggle>
+      </div>
       <ion-img [src]= "['https://devfest2018.gdgnantes.com/'+speaker.photoUrl]" ></ion-img>
       <div>
           <ion-title> Biographie</ion-title>
