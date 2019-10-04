@@ -1,25 +1,33 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>speakers-details</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Présentateur
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content *ngIf="speakerData">
-      <ion-label>{{speakerData.name}} </ion-label>
-      <div>
-          <ion-label> Ajouter à mes contacts </ion-label>
+<ion-content *ngIf="speakerData" >
+  <ion-card>
+      <ion-title text-center class="speaker">{{speakerData.name}} </ion-title>
+      <ion-item>
+          <ion-label > Ajouter à mes contacts </ion-label>
           <ion-toggle (ionChange)="onValChange()" ></ion-toggle>
-      </div>
+      </ion-item>
       <ion-img [src]= "['https://devfest2018.gdgnantes.com/'+speakerData.photoUrl]" ></ion-img>
-      <div>
+      <ion-item >          
           <ion-title> Biographie</ion-title>
-          <ion-label> {{speakerData.bio}} </ion-label>
-      </div>  
-      <div>
-          <ion-title> Ses présentations</ion-title>
-          <ion-list *ngFor="let pres of speakerSessions">
-              <ion-label [routerLink]="['/sessions/', pres.id]"> {{pres.title}} </ion-label>
-          </ion-list>
-
-      </div>
+      </ion-item>       
+      <ion-item >          
+          <ion-text> {{speakerData.bio}} </ion-text>
+      </ion-item>  
+      <ion-item >
+          <ion-title> Mes présentations</ion-title>
+        </ion-item >
+        <ion-list *ngFor="let pres of speakerSessions">
+            <ion-text text-center [routerLink]="['/sessions/', pres.id]"> {{pres.title}} </ion-text>
+        </ion-list>
+    </ion-card>
 </ion-content>
