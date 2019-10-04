@@ -23,7 +23,7 @@
       </ion-title>
 
       <ion-list *ngFor="let speaker of sessionSpeakers">
-          <ion-item class="speaker">
+          <ion-item [routerLink]="['/speakers/', speaker.id]" class="speaker">
               <ion-img [src]="['https://devfest2018.gdgnantes.com/' + speaker.photoUrl]"></ion-img>
             <ion-label>{{speaker.name}}</ion-label>
           </ion-item>

@@ -18,7 +18,7 @@
       <div>
           <ion-title> Ses présentations</ion-title>
           <ion-list *ngFor="let pres of speakerSessions">
-              <ion-label> {{pres.title}} </ion-label>
+              <ion-label [routerLink]="['/sessions/', pres.id]"> {{pres.title}} </ion-label>
           </ion-list>
 
       </div>
