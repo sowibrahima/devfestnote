@@ -19,7 +19,13 @@ const routes: Routes = [
     path: 'speakers',
     loadChildren: () => import('./speakers/speakers.module').then(m => m.SpeakersPageModule)
   },
-  { path: 'sessions', loadChildren: './sessions/sessions.module#SessionsPageModule' },  { path: 'speakers', loadChildren: './speakers/speakers.module#SpeakersPageModule' }
+  {
+    path: 'speakers/:name',
+    loadChildren: () => import('./speakers-details/speakers-details.module').then(m => m.SpeakersDetailsPageModule)
+  },
+  { path: 'sessions', loadChildren: './sessions/sessions.module#SessionsPageModule' },
+  { path: 'speakers', loadChildren: './speakers/speakers.module#SpeakersPageModule' },
+  { path: 'speakers-details', loadChildren: './speakers-details/speakers-details.module#SpeakersDetailsPageModule' }
 
 ];
 
