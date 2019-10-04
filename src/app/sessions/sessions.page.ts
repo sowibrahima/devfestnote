@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SessionRequestService } from '../services'
+
 @Component({
   selector: 'app-sessions',
   templateUrl: './sessions.page.html',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SessionsPage implements OnInit {
 
-  constructor() { }
+  sessionsData:any = []
+
+  constructor(private request:SessionRequestService) { }
 
   ngOnInit() {
+    this.request.getSessions(data => {
+      this.sessionsData = data;
+    })
   }
 
 }

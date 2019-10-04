@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  apiUrl: "https://devfest-nantes-2018-api.cleverapps.io",
   production: false
 };
 
