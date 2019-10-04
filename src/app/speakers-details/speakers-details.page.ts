@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RequestService } from '../services'
-import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts/ngx';
 
 @Component({
   selector: 'app-speakers-details',
@@ -18,7 +17,7 @@ export class SpeakersDetailsPage implements OnInit {
   toogle: any
 
 
-  constructor(private request: RequestService, private activatedRoute: ActivatedRoute, private contacts: Contacts) {
+  constructor(private request: RequestService, private activatedRoute: ActivatedRoute) {
     this.isToggled = false;
   }
 
