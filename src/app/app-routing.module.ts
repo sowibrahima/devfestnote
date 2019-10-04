@@ -16,10 +16,11 @@ const routes: Routes = [
     loadChildren: () => import('./sessions/sessions.module').then(m => m.SessionsPageModule)
   },
   {
-    path: 'list',
-    loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
+    path: 'speakers',
+    loadChildren: () => import('./speakers/speakers.module').then(m => m.SpeakersPageModule)
   },
-  { path: 'sessions', loadChildren: './sessions/sessions.module#SessionsPageModule' }
+  { path: 'sessions', loadChildren: './sessions/sessions.module#SessionsPageModule' },  { path: 'speakers', loadChildren: './speakers/speakers.module#SpeakersPageModule' }
+
 ];
 
 @NgModule({

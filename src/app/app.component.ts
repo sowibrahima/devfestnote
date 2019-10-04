@@ -18,7 +18,7 @@ export class AppComponent {
     },
     {
       title: 'Présentateur',
-      url: '/list',
+      url: '/speakers',
       icon: 'list'
     }
   ];
