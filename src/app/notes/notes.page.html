@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title text-center>
+      Mes Notes
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item lines="none" *ngIf="sessionData != null">
+      <ion-card-title text-center>{{sessionData.title}}</ion-card-title>
+    </ion-item>
+    <ion-button (click)="saveNote()" expand="block">Enregistrer</ion-button>
+    <ion-item class="note" lines="none">
+      <ion-label position="stacked">Note</ion-label>
+      <ion-textarea placeholder="Tap here" rows="7" [(ngModel)]="notes" name="notes"></ion-textarea>
+    </ion-item>
+  </ion-card>
+</ion-content>

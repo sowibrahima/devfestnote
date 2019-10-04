@@ -22,7 +22,6 @@ export class DeviceInfosPage implements OnInit {
   async initDevice(){
     this.device = await Device.getInfo();
     this.connectionStatus = await Network.getStatus();
-    console.log(this.connectionStatus)
   }
 
 }

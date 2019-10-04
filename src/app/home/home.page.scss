@@ -3,7 +3,7 @@
   max-width: 60vw;
   margin: auto;
   margin-top: 15%;
-  margin-bottom: 15%;
+  margin-bottom: 5%;
 }
 
 .welcome-card img {
@@ -12,6 +12,7 @@
 
 .conference {
   font-size: 2em;
+  font-weight: 800;
 }
 
 .main-page-button {
@@ -19,6 +20,8 @@
   width : 70%;
 }
 
+
 ion-content > * {
-  margin-bottom: 5%;
+  margin-bottom: 2em;
 }
+

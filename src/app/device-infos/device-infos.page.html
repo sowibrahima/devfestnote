@@ -11,25 +11,25 @@
 
 <ion-content>
     <ion-card *ngIf="device">
-        <ion-item *ngIf="device.platform">
+        <ion-item *ngIf="device.platform" lines="none">
             <ion-text> Platforme : {{device.platform}} </ion-text>
         </ion-item>
-        <ion-item *ngIf="device.version">
+        <ion-item *ngIf="device.version" lines="none">
             <ion-text> Version : {{device.version}} </ion-text>
         </ion-item>
-        <ion-item *ngIf="device.uuid">
+        <ion-item *ngIf="device.uuid" lines="none">
           <ion-text> UUID : {{device.uuid}} </ion-text>
         </ion-item>
-        <ion-item *ngIf="device.model">
+        <ion-item *ngIf="device.model" lines="none">
             <ion-text> Modèle : {{device.model}} </ion-text>
         </ion-item>        
-        <ion-item *ngIf="connectionStatus.connected">
+        <ion-item *ngIf="connectionStatus.connected" lines="none">
             <ion-text> 
               Connecté : Oui               
             </ion-text>
             
         </ion-item>
-        <ion-item *ngIf="connectionStatus.connectionType">
+        <ion-item *ngIf="connectionStatus.connectionType" lines="none">
             <ion-text> Connexion : {{connectionStatus.connectionType}} </ion-text>
         </ion-item>
         

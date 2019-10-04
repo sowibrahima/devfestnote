@@ -1,9 +1,8 @@
 <ion-header>
   <ion-toolbar>
-    <div>
-      <ion-icon slot="start" name="ios-arrow-back"></ion-icon>
-      <ion-title>Retour</ion-title>
-    </div>
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
 
     <ion-title text-center>
       Sessions
@@ -16,25 +15,28 @@
 
 <ion-content *ngIf="sessionData">
   <ion-card>
-    <ion-item>
-      <ion-title text-left>
-        <h1>{{sessionData.title}}</h1>
-      </ion-title>
+    <ion-item lines="none">
+      <ion-card-title class="toolbar-title" text-center>{{sessionData.title}}</ion-card-title>
     </ion-item>
 
-    <ion-item class="description">
+    <ion-item class="description" lines="none">
       <ion-text>
         {{sessionData.description}}
       </ion-text>
     </ion-item>
 
-    <ion-item>
+    <ion-item lines="none">
       <ion-list *ngFor="let speaker of sessionSpeakers">
-        <ion-item class="speaker" [routerLink]="['/speakers/', speaker.id]" class="speaker">
+        <ion-item class="speaker" [routerLink]="['/speakers/', speaker.id]" class="speaker"  lines="none">
           <ion-img [src]="['https://devfest2018.gdgnantes.com/' + speaker.photoUrl]"></ion-img>
           <ion-label>{{speaker.name}}</ion-label>
         </ion-item>
       </ion-list>
+    </ion-item>
+    <br>
+    <br>
+    <ion-item class="notes" lines="none">
+      <ion-button expand="block" [routerLink]="['/', sessionData.id, 'notes']">Mes Notes</ion-button>
     </ion-item>
   </ion-card>
 </ion-content>

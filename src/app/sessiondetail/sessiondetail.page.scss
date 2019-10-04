@@ -5,9 +5,17 @@
 }
 
 ion-card {
-    margin-top: 8%;
+    margin-top: 2em;
+    min-height: 50vh;
 }
 
 .description {
     margin-bottom: 2em;
 }
+
+.notes ion-button {
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 1em;
+    width: 80vw;
+}   

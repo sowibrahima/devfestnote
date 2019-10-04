@@ -31,12 +31,17 @@ const routes: Routes = [
     path: 'speakers/:id',
     loadChildren: () => import('./speakers-details/speakers-details.module').then(m => m.SpeakersDetailsPageModule)
   },
+  {
+    path: ':id/notes',
+    loadChildren: () => import('./notes/notes.module').then(m => m.NotesPageModule)
+  },
 
   { path: 'sessions', loadChildren: './sessions/sessions.module#SessionsPageModule' },
   { path: 'sessiondetail', loadChildren: './sessiondetail/sessiondetail.module#SessiondetailPageModule' },
   { path: 'speakers', loadChildren: './speakers/speakers.module#SpeakersPageModule' },
   { path: 'speakers-details', loadChildren: './speakers-details/speakers-details.module#SpeakersDetailsPageModule' },
-  { path: 'device-infos', loadChildren: './device-infos/device-infos.module#DeviceInfosPageModule' }
+  { path: 'device-infos', loadChildren: './device-infos/device-infos.module#DeviceInfosPageModule' },
+  { path: 'notes', loadChildren: './notes/notes.module#NotesPageModule' }
 
   
 

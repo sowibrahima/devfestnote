@@ -1,33 +1,37 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-title>
-        Présentateur
-      </ion-title>
-      <ion-buttons slot="end">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Présentateur
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
-<ion-content *ngIf="speakerData" >
+<ion-content *ngIf="speakerData">
   <ion-card>
-      <ion-title text-center class="speaker">{{speakerData.name}} </ion-title>
-      <ion-item>
-          <ion-label > Ajouter à mes contacts </ion-label>
-          <ion-toggle (ionChange)="onValChange()" ></ion-toggle>
-      </ion-item>
-      <ion-img [src]= "['https://devfest2018.gdgnantes.com/'+speakerData.photoUrl]" ></ion-img>
-      <ion-item >          
-          <ion-title> Biographie</ion-title>
-      </ion-item>       
-      <ion-item >          
-          <ion-text> {{speakerData.bio}} </ion-text>
-      </ion-item>  
-      <ion-item >
-          <ion-title> Mes présentations</ion-title>
-        </ion-item >
-        <ion-list *ngFor="let pres of speakerSessions">
-            <ion-text text-center [routerLink]="['/sessions/', pres.id]"> {{pres.title}} </ion-text>
-        </ion-list>
-    </ion-card>
+    <ion-card-title text-center class="speaker">{{speakerData.name}} </ion-card-title>
+    <ion-item  lines="none">
+      <ion-label> Ajouter à mes contacts </ion-label>
+      <ion-toggle (ionChange)="onValChange()"></ion-toggle>
+    </ion-item>
+    <ion-img [src]="['https://devfest2018.gdgnantes.com/'+speakerData.photoUrl]"></ion-img>
+    <ion-item  lines="none">
+      <ion-card-title text-center> Biographie</ion-card-title>
+    </ion-item>
+    <ion-item  lines="none">
+      <ion-text> {{speakerData.bio}} </ion-text>
+    </ion-item>
+    <br>
+    <ion-item  lines="none" *ngIf="speakerSessions && speakerSessions.length>0">
+      <ion-card-title text-center> Mes présentations</ion-card-title>
+    </ion-item>
+    <ion-list *ngFor="let pres of speakerSessions">
+      <ion-text text-center [routerLink]="['/sessions/', pres.id]"> {{pres.title}} </ion-text>
+    </ion-list>
+  </ion-card>
 </ion-content>
