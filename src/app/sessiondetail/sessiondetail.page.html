@@ -1,10 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      <ion-icon slot="start" name="ios-arrow-backward"></ion-icon>
-      Retour
-    </ion-title>
-    <ion-title>
+    <div>
+        <ion-icon slot="start" name="ios-arrow-back"></ion-icon>
+        <ion-title>Retour</ion-title>
+    </div>
+    
+    <ion-title text-center>
       Sessions
     </ion-title>
     <ion-buttons slot="end">
@@ -13,6 +14,18 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="sessionData">
+    <ion-title>
+        {{sessionData.title}}
+      </ion-title>
+      <ion-title>
+          {{sessionData.description}}
+      </ion-title>
 
+      <ion-list *ngFor="let speaker of sessionSpeakers">
+          <ion-item class="speaker">
+              <ion-img [src]="['https://devfest2018.gdgnantes.com/' + speaker.photoUrl]"></ion-img>
+            <ion-label>{{speaker.name}}</ion-label>
+          </ion-item>
+        </ion-list>
 </ion-content>

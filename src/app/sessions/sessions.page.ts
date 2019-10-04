@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { SessionRequestService } from '../services'
+import { RequestService } from '../services'
 
 @Component({
   selector: 'app-sessions',
@@ -9,14 +9,15 @@ import { SessionRequestService } from '../services'
 })
 export class SessionsPage implements OnInit {
 
-  sessionsData:any = []
+  sessionsData: any = []
 
-  constructor(private request:SessionRequestService) { }
+  constructor(private request: RequestService) { }
 
   ngOnInit() {
     this.request.getSessions(data => {
       this.sessionsData = data;
     })
   }
+
 
 }

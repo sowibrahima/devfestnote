@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { SessionRequestService } from '../services'
+import { RequestService } from '../services'
 
 @Component({
   selector: 'app-speakers',
@@ -11,7 +11,7 @@ export class SpeakersPage implements OnInit {
 
   speakers:any = []
 
-  constructor(private request:SessionRequestService) { }
+  constructor(private request:RequestService) { }
 
   ngOnInit() {
     this.getSpeakers();

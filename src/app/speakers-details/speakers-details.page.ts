@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SessionRequestService } from '../services'
+import { RequestService } from '../services'
 
 @Component({
   selector: 'app-speakers-details',
@@ -15,7 +15,7 @@ export class SpeakersDetailsPage implements OnInit {
 
   speakers:any = []
 
-  constructor(private request:SessionRequestService, private activatedRoute: ActivatedRoute) { }
+  constructor(private request:RequestService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.myId = this.activatedRoute.snapshot.paramMap.get('name');

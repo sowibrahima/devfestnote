@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 
-import { SessionRequestService } from '../services'
+
+import { RequestService } from '../services'
+
 
 @Component({
   selector: 'app-sessiondetail',
@@ -10,16 +12,24 @@ import { SessionRequestService } from '../services'
 })
 export class SessiondetailPage implements OnInit {
 
+  
   sessionId: string
-  speaker: any
+  public sessionData: any
+  public sessionSpeakers: any
 
-  constructor(private route: ActivatedRoute, private request:SessionRequestService) { }
+
+  constructor(private route: ActivatedRoute, private request:RequestService) {  
+  }
 
   ngOnInit() {
-    this.sessionId = this.route.snapshot.paramMap.get("id")
-    //this.request.getSessionDetail(this.sessionId, data => {
-    //  this.speaker = data
-    //})
+    this.sessionId = this.route.snapshot.params['id'];
+    this.sessionData = this.request.getSessionDetail(this.sessionId, data=>{
+      this.sessionData = data
+
+      this.request.getSessionSpeakers(this.sessionData.id, response => {
+        this.sessionSpeakers = response
+      })
+    })
   }
 
 }
