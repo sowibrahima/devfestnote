@@ -16,8 +16,8 @@ export class SessionRequestService {
         });
     }
 
-    getSessionDetail(sessionId, callback){
-        return this.http.get(`${environment.apiUrl}/sessions/${sessionId}`).subscribe(data => {
+    getSpeakers(callback){
+        return this.http.get(`${environment.apiUrl}/speakers`).subscribe(data => {
             callback(data);
         });
     }

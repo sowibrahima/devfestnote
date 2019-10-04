@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SessionRequestService } from '../services'
+
 @Component({
   selector: 'app-speakers',
   templateUrl: './speakers.page.html',
@@ -7,21 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpeakersPage implements OnInit {
 
-  public speakers: Array<{ name: string }> = [];
+  speakers:any = []
 
-  constructor() { }
+  constructor(private request:SessionRequestService) { }
 
   ngOnInit() {
     this.getSpeakers();
   }
 
   getSpeakers() {
-    this.speakers.push({
-       name : "Delforges Alexis"
-    });
-    this.speakers.push({
-      name : "Sow Ibrahima"
-   });
+    this.request.getSpeakers(data => {
+      this.speakers = data;
+    })
   }
 
   

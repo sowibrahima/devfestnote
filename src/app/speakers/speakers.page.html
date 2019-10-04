@@ -5,9 +5,9 @@
 </ion-header>
 
 <ion-content>
-  <ion-list *ngFor="let speaker of speakers">
+  <ion-list *ngFor="let speaker of speakers | keyvalue">
     <ion-item [routerLink]="['/speakers/', speaker.name]" routerDirection="root">
-      <ion-label>{{speaker.name}} {{speaker.surname}} </ion-label>
+      <ion-label>{{speaker.value.name}}</ion-label>
       <ion-icon slot="end" name="ios-arrow-forward"> </ion-icon>
     </ion-item>
   </ion-list>

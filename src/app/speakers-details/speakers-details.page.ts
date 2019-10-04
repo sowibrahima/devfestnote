@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { SessionRequestService } from '../services'
 
 @Component({
   selector: 'app-speakers-details',
@@ -9,23 +10,26 @@ import { ActivatedRoute } from '@angular/router';
 export class SpeakersDetailsPage implements OnInit {
 
   public myId : string;
-  public speaker: { name: string; photoUrl: string; bio: string; presentations : string[]}
+  public speaker: any[];
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  speakers:any = []
+
+  constructor(private request:SessionRequestService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.myId = this.activatedRoute.snapshot.paramMap.get('name');
-    console.log(this.myId);
-    this.getSpeaker();
+    this.getSpeaker(this.myId);
   }
 
-  getSpeaker() {
-    this.speaker = {
-      name : "Delforges Alexis",
-      photoUrl : "",
-      bio : "Best front-end dev in the world",
-      presentations : [ "Angular", "Ionic", "Cordova"]
-    };
+  getSpeaker(myId) {
+    this.request.getSpeakers(data => {
+      this.speakers = data;
+      console.log(this.speakers);
+      this.speaker = this.speakers["111"];
+      //this.speaker = this.speakers[myId];
+      console.log(this.speaker);
+    })
   }
+
 
 }

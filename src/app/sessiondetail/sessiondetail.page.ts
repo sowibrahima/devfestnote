@@ -17,9 +17,9 @@ export class SessiondetailPage implements OnInit {
 
   ngOnInit() {
     this.sessionId = this.route.snapshot.paramMap.get("id")
-    this.request.getSessionDetail(this.sessionId, data => {
-      this.speaker = data
-    })
+    //this.request.getSessionDetail(this.sessionId, data => {
+    //  this.speaker = data
+    //})
   }
 
 }
