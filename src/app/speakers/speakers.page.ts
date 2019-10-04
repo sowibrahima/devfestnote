@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpeakersPage implements OnInit {
 
-  public speakers: Array<{ name: string; surname: string; }> = [];
+  public speakers: Array<{ name: string }> = [];
 
   constructor() { }
 
@@ -17,12 +17,10 @@ export class SpeakersPage implements OnInit {
 
   getSpeakers() {
     this.speakers.push({
-       name : "Delforges",
-       surname : "Alexis"
+       name : "Delforges Alexis"
     });
     this.speakers.push({
-      name : "Sow",
-      surname : "Ibrahima"
+      name : "Sow Ibrahima"
    });
   }
 

@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SpeakersDetailsPage implements OnInit {
 
   public myId : string;
-  public speaker: { name: string; surname: string; img: string; bio: string; presentations : string[]}
+  public speaker: { name: string; photoUrl: string; bio: string; presentations : string[]}
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
@@ -21,9 +21,8 @@ export class SpeakersDetailsPage implements OnInit {
 
   getSpeaker() {
     this.speaker = {
-      name : "Delforges",
-      surname : "Alexis",
-      img : "",
+      name : "Delforges Alexis",
+      photoUrl : "",
       bio : "Best front-end dev in the world",
       presentations : [ "Angular", "Ionic", "Cordova"]
     };
