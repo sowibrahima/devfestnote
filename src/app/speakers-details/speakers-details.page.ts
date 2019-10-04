@@ -9,27 +9,24 @@ import { RequestService } from '../services'
 })
 export class SpeakersDetailsPage implements OnInit {
 
-  public myId : string;
-  public speaker: any[];
+  speakerId: string
+  public speakerData: any
+  public speakerSessions: any
+
   toogle:any
 
-  speakers:any = []
 
   constructor(private request:RequestService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.myId = this.activatedRoute.snapshot.paramMap.get('name');
-    this.getSpeaker(this.myId);    
-  }
-
-  getSpeaker(myId) {
-    this.request.getSpeakers(data => {
-      this.speakers = data;
-      console.log(this.speakers);
-      this.speaker = this.speakers["111"];
-      //this.speaker = this.speakers[myId];
-      console.log(this.speaker);
-    })
+    this.speakerId = this.activatedRoute.snapshot.params['id'];
+    this.request.getSpeakerDetail(this.speakerId, data=>{
+      console.log(data);
+     this.speakerData = data
+     this.request.getSpeakerSessions(this.speakerData.id, response => {
+       this.speakerSessions = response
+     })
+   })
   }
 
   onValChange(){

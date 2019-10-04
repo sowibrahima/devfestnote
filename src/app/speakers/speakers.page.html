@@ -1,12 +1,18 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Speakers</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Présentateurs
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
 
-<ion-content>
+<ion-content *ngIf="speakers">
   <ion-list *ngFor="let speaker of speakers | keyvalue">
-    <ion-item [routerLink]="['/speakers/', speaker.name]" routerDirection="root">
+    <ion-item [routerLink]="['/speakers/', speaker.value.id]">
       <ion-label>{{speaker.value.name}}</ion-label>
       <ion-icon slot="end" name="ios-arrow-forward"> </ion-icon>
     </ion-item>

@@ -28,7 +28,7 @@ const routes: Routes = [
     loadChildren: () => import('./speakers/speakers.module').then(m => m.SpeakersPageModule)
   },
   {
-    path: 'speakers/:name',
+    path: 'speakers/:id',
     loadChildren: () => import('./speakers-details/speakers-details.module').then(m => m.SpeakersDetailsPageModule)
   },
 

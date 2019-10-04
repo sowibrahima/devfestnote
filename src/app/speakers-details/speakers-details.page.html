@@ -4,26 +4,22 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <div *ngIf="speaker">
-      <ion-label>{{speaker.name}} </ion-label>
+<ion-content *ngIf="speakerData">
+      <ion-label>{{speakerData.name}} </ion-label>
       <div>
           <ion-label> Ajouter à mes contacts </ion-label>
           <ion-toggle (ionChange)="onValChange()" ></ion-toggle>
       </div>
-      <ion-img [src]= "['https://devfest2018.gdgnantes.com/'+speaker.photoUrl]" ></ion-img>
+      <ion-img [src]= "['https://devfest2018.gdgnantes.com/'+speakerData.photoUrl]" ></ion-img>
       <div>
           <ion-title> Biographie</ion-title>
-          <ion-label> {{speaker.bio}} </ion-label>
-      </div>
-      <!--
-        <div>
+          <ion-label> {{speakerData.bio}} </ion-label>
+      </div>  
+      <div>
           <ion-title> Ses présentations</ion-title>
-          <ion-list *ngFor="let pres of speaker.presentations">
-              <ion-label> {{pres}} </ion-label>
+          <ion-list *ngFor="let pres of speakerSessions">
+              <ion-label> {{pres.title}} </ion-label>
           </ion-list>
 
       </div>
-      -->
-    </div>
 </ion-content>
