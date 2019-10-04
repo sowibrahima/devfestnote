@@ -17,6 +17,6 @@
   <div>
       <ion-label slot="center">Date début Date fin</ion-label>
   </div>
-  <ion-button expand="block">Voir les sessions</ion-button>
-  <ion-button expand="block">Voir les présentateurs</ion-button>
+  <ion-button [routerLink]="['/sessions']" expand="block">Voir les sessions</ion-button>
+  <ion-button [routerLink]="['/speakers']" expand="block">Voir les présentateurs</ion-button>
 </ion-content>
