@@ -5,5 +5,17 @@
 </ion-header>
 
 <ion-content>
+    <ion-label>{{speaker.name}} {{speaker.surname}} </ion-label>
+    <ion-img [src]= speaker.img ></ion-img>
+    <div>
+        <ion-title> Biographie</ion-title>
+        <ion-label> {{speaker.bio}} </ion-label>
+    </div>
+    <div>
+        <ion-title> Ses présentations</ion-title>
+        <ion-list *ngFor="let pres of speaker.presentations">
+            <ion-label> {{pres}} </ion-label>
+        </ion-list>
 
+    </div>
 </ion-content>
