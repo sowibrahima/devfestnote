@@ -16,10 +16,15 @@ const routes: Routes = [
     loadChildren: () => import('./sessions/sessions.module').then(m => m.SessionsPageModule)
   },
   {
+    path: 'sessions/:id',
+    loadChildren: () => import('./sessiondetail/sessiondetail.module').then(m => m.SessiondetailPageModule)
+  },
+  {
     path: 'list',
     loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
   },
-  { path: 'sessions', loadChildren: './sessions/sessions.module#SessionsPageModule' }
+  { path: 'sessions', loadChildren: './sessions/sessions.module#SessionsPageModule' },
+  { path: 'sessiondetail', loadChildren: './sessiondetail/sessiondetail.module#SessiondetailPageModule' }
 ];
 
 @NgModule({
